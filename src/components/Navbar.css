@@ -1,0 +1,117 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: #1f1f1f;
+    z-index: 1;
+}
+
+.navbar .logo{
+    flex: 1;
+}
+
+.navbar .logo h1{
+    background: -webkit-linear-gradient( 90deg , #00c5a1 ,  #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo a{
+    text-decoration: none;
+}
+
+.logo a:hover{
+    cursor: pointer;
+}
+
+.nav-links{
+    flex:1 ; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s;
+}
+
+.nav-links a:hover{
+    color : #00ae8e;
+}
+
+.hamburger{
+    display: none;
+}
+
+.active-link {
+    background-color: #00ae8e;
+    color: #ff0000; /* Change the color to your preferred active link color */
+    /* Add any other styles you want for the active link here */
+  }
+
+
+.logincontainer{
+    display: block;
+}
+.logincontainer-mobile{
+    display: none;
+}
+
+@media screen and (max-width:700px) {
+    .navbar{
+        flex-direction: column;
+    }
+
+    .nav-links{
+        flex-direction: column;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .nav-links{
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ;
+    }
+
+    .nav-links a{
+        margin: 5px 0;
+    }
+
+    .logo h1{
+        font-size: 24px;
+    }
+
+    .hamburger{
+        display: block;
+        cursor: pointer;
+    }
+
+    .logo{
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .logo img{
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo h1{
+        margin-left: 5px;
+    }
+
+    .logincontainer{
+        display: none;
+    }
+
+    .logincontainer-mobile{
+        display: block;
+    }
+}

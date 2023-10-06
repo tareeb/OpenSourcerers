@@ -1,0 +1,38 @@
+.userdetails{
+    padding: 5%;
+}
+
+.userbio{
+    margin-bottom: 10px;
+    background-color: #0a3654eb;
+    color: white;
+    border-radius:5px;
+    padding: 10px;
+    font-size: larger;
+}
+
+.usercreation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.usercreation span{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.usertags h1{
+    margin: 20px 5px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 768px){
+    .userbio{
+        font-size: medium;
+    }
+}

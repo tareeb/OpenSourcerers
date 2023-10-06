@@ -1,0 +1,62 @@
+.listfilter{
+    padding: 5%;
+}
+
+.listfilter p {
+    cursor: pointer;
+}
+
+.selectedtags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.tag-conatiner{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: #0a3754;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.listfilter .input-container{
+    display: flex;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.listfilter input{
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid #0a3754;
+    font-size: 1.1rem;
+}
+
+.listfilter .input-container button{
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #0a3754;
+    background-color: #0a5441;
+    color: white;
+    cursor: pointer;
+}
+
+.tagslist{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+}
+
+.tagslist .tag{
+    background-color: #0a544a;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}

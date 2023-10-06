@@ -1,0 +1,43 @@
+.projectdetails{
+    padding: 5%;
+}
+
+.projectdescription{
+    margin-bottom: 10px;
+    background-color: #0a3654eb;
+    color: white;
+    border-radius:5px;
+    padding: 10px;
+    font-size: larger;
+}
+
+.projectcreation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.projectcreation span{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.projecttags h1{
+    margin: 20px 5px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 768px){
+    .projectdescription{
+        font-size: medium;
+    }
+
+    .projectcreation{
+        flex-direction: column;
+        gap: 20px;
+    }
+}
