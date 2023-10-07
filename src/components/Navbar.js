@@ -1,10 +1,13 @@
 import './Navbar.css';
 import { useRef } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import menu from "../images/menu.svg"
 import LoginComponent from './Signin';
 
 function Navbar(){
+
+    const [signIn , setSignIn] = useState(false);
    
     const navLinks = useRef(null);
     let bool = false;
@@ -28,7 +31,11 @@ function Navbar(){
                     <img className="hamburger" src={menu} alt="menu" onClick={toggle}/>
                 
                     <div className='logincontainer-mobile'>
-                        <LoginComponent></LoginComponent>
+                        <LoginComponent
+                            setSignIn={setSignIn}
+                            signIn={signIn}
+                            key={signIn}
+                        ></LoginComponent>
                     </div>
                 </div>
                 <div className='nav-links' ref={navLinks}>
@@ -37,7 +44,11 @@ function Navbar(){
                     <Link to='/contributors'>Contributers</Link>
                 </div>
                 <div className='logincontainer'>
-                    <LoginComponent></LoginComponent>
+                        <LoginComponent
+                            setSignIn={setSignIn}
+                            signIn={signIn}
+                            key={signIn}
+                        ></LoginComponent>
                 </div>
             </div>
         </div>
