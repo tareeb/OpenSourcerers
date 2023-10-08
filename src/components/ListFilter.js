@@ -32,7 +32,7 @@ function ListFilter ({selectedTags , setSelectedTags}){
     
 
     const updateSelectedTags = (item) => {
-        if (!selectedTags.includes(item)) {
+        if (!selectedTags.some(tag => tag.id === item.id)) {
             setSelectedTags([...selectedTags, item]);
         }
         setSearchTerm("");

@@ -17,32 +17,60 @@ function ContributorsPage() {
 
     useEffect(() => {
         setLoading(true);
-        try{
-            const tag_ids = selectedTags.map(tag => tag.id);
-            fetch(Base_Url + 'usersbytag/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({tag_ids: tag_ids})
-            }).then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log(data.users);
-                setUsers(data.users);
-                setLoading(false);
-            })
-            .catch(error => {  
-                toast.error('Error Connecting to Server');
-                console.error(error);
-                setLoading(false);
-            });
-        } catch (error) {
-            console.log(error);
+
+        if(selectedTags.length === 0){
+            try{
+                fetch(Base_Url + 'allusers/')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data.users);
+                    setUsers(data.users);
+                    setLoading(false);
+                })
+                .catch(error => {  
+                    toast.error('Error Connecting to Server');
+                    console.error(error);
+                    setLoading(false);
+                });
+                return;
+            }
+            catch(error){
+                console.log(error);
+            }
+        }
+        else{        
+            try{
+                const tag_ids = selectedTags.map(tag => tag.id);
+                fetch(Base_Url + 'usersbytag/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({tag_ids: tag_ids})
+                }).then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data.users);
+                    setUsers(data.users);
+                    setLoading(false);
+                })
+                .catch(error => {  
+                    toast.error('Error Connecting to Server');
+                    console.error(error);
+                    setLoading(false);
+                });
+            } catch (error) {
+                console.log(error);
+            }
         }
     }, [selectedTags]);
 

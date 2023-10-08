@@ -8,14 +8,17 @@ import { Link } from "react-router-dom";
 import toast, { Toaster,  } from 'react-hot-toast';
 import HashLoader from "react-spinners/HashLoader";
 
+import ProjectDetailForm from "../components/ProjectDetailForm"
+
 import './ProjectDetailPage.css'
 
-function ProjectDetailPage(){
+function ProjectAdminPage(){
     
     const { projectId , projectTitle }  = useParams();
     const [projectData, setProjectData] = useState();
     const [loading, setLoading] = useState(true);
 
+    const [projectOpen, setProjectOpen] = useState(false);
 
     
     useEffect(() => {
@@ -56,6 +59,19 @@ function ProjectDetailPage(){
 
             { projectData &&
             <div className='projectdetails'>
+
+            <div className='editprofile-button-container'>
+
+                <button onClick={() => {  setProjectOpen(true); }} >Edit Project Details</button>
+                <ProjectDetailForm
+                        open={projectOpen}
+                        onCreate={() => {  setProjectOpen(false); }}
+                        onCancel={() => {  setProjectOpen(false); }}
+                        update={true}
+                        projectData={projectData}
+                ></ProjectDetailForm>
+
+            </div>
                 
                 <div className='projectdescription'>
                     <p>{projectData.description}</p>
@@ -63,9 +79,9 @@ function ProjectDetailPage(){
 
                 <div className='projectcreation'>
                     
-                    <Link to={`/userdetails/${projectData.created_by}/${projectData.created_by_id}`}
+                    <Link to={`/userprofile`}
                         style={{ textDecoration: "none", color:"black"}}>
-                        <p>Created by: <span> {projectData.created_by} </span> </p>
+                        <p>Created by: <span> You </span> </p>
                     </Link>
                     <p>Created on: <span> {projectData.start_date} </span> </p>
                     
@@ -85,6 +101,10 @@ function ProjectDetailPage(){
                                 ))}
                     </ul>
                 </div>
+
+                
+
+
             </div>}
 
             <Toaster position="top-right" />
@@ -93,4 +113,4 @@ function ProjectDetailPage(){
     );
 }
 
-export default ProjectDetailPage;
+export default ProjectAdminPage;

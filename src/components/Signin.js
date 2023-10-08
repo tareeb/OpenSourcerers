@@ -4,22 +4,29 @@ import { auth, googleProvider } from '../firebasex';
 import toast, { Toaster,  } from 'react-hot-toast';
 
 import account_img from "../images/account.png";
-import google_img from "../images/google.png";
+import google_img from  "../images/google.png";
 
 import { Base_Url } from "../API"
 import { useEffect  } from "react"
 
 import './Signin.css';
 
-const LoginComponent = ({signIn , setSignIn}) => {
+const LoginComponent = () => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [Token, setToken] = useState();
+    const [signIn, setSignIn] = useState(false)
+    
 
     const storedUsername = localStorage.getItem("username");
     const storedId = localStorage.getItem("id");
     const storedUuid = localStorage.getItem("uuid");
-  
+
+    useEffect(() => {
+      if (storedUsername) {
+        setSignIn(true);
+      }
+    }, [isOpen]);
    
     const toggleDropdown = () => {
       setIsOpen(!isOpen);
@@ -89,7 +96,9 @@ const LoginComponent = ({signIn , setSignIn}) => {
 
       {isOpen && signIn && (
         <div className="dropdown-menu">
-          <p className='username'>{storedUsername}</p>
+          {storedUsername ? (
+            <p className='username'>{storedUsername}</p>
+          ) : null }
           <button className="dropdown-item" onClick={logout}>
             logout
           </button>

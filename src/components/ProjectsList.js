@@ -9,9 +9,9 @@ function ProjectLists({projects}) {
         justifyContent: "center",
         alignItems: "stretch",
         gap: "10px",
-        padding:"0% 5%"
+        padding:"0% 5% 5% 5%"
     }}>
-        {projects.slice(0,10).map(project => (
+        {projects.map(project => (
             <ProjectsCard key={project.id} project={project}></ProjectsCard>
         ))}
     </div>

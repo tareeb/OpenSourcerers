@@ -1,5 +1,5 @@
 .userdetails{
-    padding: 5%;
+    padding: 0% 5% 5% 5%;
 }
 
 .userbio{
@@ -31,8 +31,36 @@
     font-weight: 500;
 }
 
+.userprojects h1{
+    margin: 20px 5px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.editprofile-button-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}   
+
+.editprofile-button-container button{
+    padding: 10px;
+    border: 2px solid #0a544a;
+    background-color: #0a544acd;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 768px){
     .userbio{
         font-size: medium;
+    }
+}
+
+@media screen and (max-width: 300px){
+    .editprofile-button-container{
+        flex-direction: column;
+        gap: 20px;
     }
 }

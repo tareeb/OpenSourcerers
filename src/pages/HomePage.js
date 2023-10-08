@@ -20,7 +20,7 @@ const HomePage = () => {
     <>
       <section className='Main-Hero-section' >
           <h1>OpenSourcerers</h1>
-          <p>A Place Where Everyone Can Show the Magic of Open Source and Become a OpenSourcerer</p>
+          <p>Discover a place where everyone can show their Open Source magic and become an OpenSourcerer!</p>
           <div className='card-container'>
 
               <Card 
@@ -33,6 +33,12 @@ const HomePage = () => {
                 title='Explore Contributors'
                 description='Explore the Contributors and their Contributions'
                 link='/contributors'
+              ></Card>
+
+              <Card
+                title='Semantic Search'
+                description='Search for Projects and Contributors'
+                link='/semanticsearch'
               ></Card>
 
           </div>
