@@ -52,6 +52,20 @@
     cursor: pointer;
 }
 
+.communicationlinks h1{
+    margin: 20px 5px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.communicationlinks .card{
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
 @media screen and (max-width: 768px){
     .userbio{
         font-size: medium;

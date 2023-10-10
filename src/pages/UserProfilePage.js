@@ -10,6 +10,8 @@ import HashLoader from "react-spinners/HashLoader";
 
 import UserDetailForm from "../components/UserDetailForm"
 import ProjectDetailForm from "../components/ProjectDetailForm"
+import SemanticSearch from '../components/SemanticSearch';
+import CommunicationAccess from '../components/CommunicationAccess';
 
 import './UserDetailPage.css';
 
@@ -56,7 +58,7 @@ function UserProfilePage() {
     }
     }, [userId , reloadUserData]);
 
-
+    
   return (
     <>
       <section className='Hero-section'>
@@ -105,6 +107,16 @@ function UserProfilePage() {
                 <p>{userData.bio}</p>
             </div>
 
+            <div className='recomendation-container'>
+                    <SemanticSearch
+                        values={
+                            {
+                                search : "project",
+                                query : userData.bio,
+                            }
+                        }
+                    ></SemanticSearch>
+            </div>
             
             <div className='usertags'>
                 <h1>User Tags</h1>
@@ -127,7 +139,7 @@ function UserProfilePage() {
                     {userData.projects.length === 0 ? <p> No projects found </p> : null}
                     {userData.projects.map
                         (project => (
-                            <Link to={`/projectadmin/${project.title}/${project.id}`}
+                            <Link to={`/projectdetails/${project.title}/${project.id}`}
                                   style={{color:"black" , width:"fit-content"}}
                                   key={project.id}
                             >
@@ -135,6 +147,12 @@ function UserProfilePage() {
                             </Link>
                             ))}
                 </div>
+            </div>
+
+            <div>
+                <CommunicationAccess
+                    userid={userId}
+                ></CommunicationAccess>
             </div>
 
         </div>

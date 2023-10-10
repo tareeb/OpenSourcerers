@@ -1,5 +1,5 @@
 import { Select } from 'antd';
-import { Button, Form, Input, Modal } from 'antd';
+import { Button, Form, Input } from 'antd';
 import { Base_Url } from '../API';
 import { useState } from 'react';
 
@@ -107,7 +107,9 @@ const SemanticSearchPage = () => {
                             message: 'Please Enter your search query',
                             },
                         ]}>
-                        <TextArea rows={4}  placeholder='Write in Your Own Words'/>
+                        <TextArea rows={4}  placeholder='You are free to write in any style 
+                        But for better results consider including:
+                        Domain , Key Terms , Experience etc'/>
                     </Form.Item>
 
 

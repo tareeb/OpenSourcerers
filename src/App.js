@@ -11,8 +11,6 @@ import UserProfilePage from "./pages/UserProfilePage";
 
 import LoginRequestPage from "./pages/LoginRequestPage";
 
-import ProjectAdminPage from './pages/ProjectAdminPage';
-
 import SemanticSearchPage from './pages/SemanticSearchPage';
 
 function App() {
@@ -20,6 +18,8 @@ function App() {
    <BrowserRouter>
     <Navbar></Navbar>
       <Routes>
+
+        
         <Route path='/' element={<HomePage></HomePage>}/>
         <Route path='/projects' element={<ProjectPage></ProjectPage>}/>
         <Route path='/contributors' element={<ContributorsPage></ContributorsPage>}/>
@@ -29,13 +29,12 @@ function App() {
         <Route path='/userprofile' element={<UserProfilePage></UserProfilePage>}/>
         <Route path='/loginrequest' element={<LoginRequestPage></LoginRequestPage>}></Route>
 
-        <Route path='/projectadmin/:projectTitle/:projectId' element={<ProjectAdminPage></ProjectAdminPage>}/>
-
         <Route path='/semanticsearch' element={<SemanticSearchPage></SemanticSearchPage>}/>
         
 
-            <Route path='*' element={<p>No Page Found</p>} ></Route>
-          </Routes>   
+        <Route path='*' element={<p>No Page Found</p>} ></Route>
+      
+      </Routes>   
         
     </BrowserRouter>
   );

@@ -70,7 +70,7 @@ const UserDetailForm = ({ open, onCreate, onCancel , userData , setReloadUserDat
       ]}
 
     >
-      <Form form={form} layout="horizontal" name="order-form"
+      <Form form={form} layout="horizontal" name="userbio"
             initialValues={{
                 Bio: {userData} ? userData.bio : "",
             }}
@@ -82,9 +82,10 @@ const UserDetailForm = ({ open, onCreate, onCancel , userData , setReloadUserDat
                     selectedTags={SelectedTags}
                 ></ListFilter>
         </Form.Item>
-
+      
         <Form.Item  name="Bio" label="Bio">
-            <Input.TextArea  style={{height:"100px"}} placeholder='Write about your self , Experiecne and Exopertise'/>
+            <Input.TextArea  rows={4}
+            placeholder='Write about your self , Experiecne and Expertise , Domain'/>
         </Form.Item>
 
       </Form>

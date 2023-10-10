@@ -71,7 +71,7 @@ const ProjectDetailForm = ({ open, onCreate, onCancel , update , projectData}) =
       ]}
 
     >
-      <Form form={form} layout="horizontal" name="order-form"
+      <Form form={form} layout="horizontal" name="projectDescription"
             initialValues={{
                Title : update ? projectData.title : "",
                 Description : update ? projectData.description : "",
@@ -95,7 +95,8 @@ const ProjectDetailForm = ({ open, onCreate, onCancel , update , projectData}) =
             message: 'Please Enter Desctiption of the Project',
             },
         ]}>
-            <Input.TextArea  style={{height:"100px"}} placeholder='Write about your self , Experiecne and Exopertise'/>
+            <Input.TextArea  rows={4} 
+            placeholder='Write about problem statement, project Domain and Expertise Required.'/>
         </Form.Item>
 
         <Form.Item  name="tags" label="Select Tags">

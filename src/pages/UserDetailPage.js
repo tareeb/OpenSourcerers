@@ -6,6 +6,8 @@ import { Base_Url } from "../API"
 import toast, { Toaster,  } from 'react-hot-toast';
 import HashLoader from "react-spinners/HashLoader";
 
+import CommunicationRequest from '../components/CommunicationRequest';
+
 import './UserDetailPage.css'
 
 function UserDetailPage(){
@@ -13,6 +15,7 @@ function UserDetailPage(){
     const { userId , username } = useParams();
     const [userData, setUserData] = useState();
     const [loading, setLoading] = useState(true);
+    const user_id = localStorage.getItem('id');
     
     useEffect(() => {
         setLoading(true);
@@ -55,6 +58,16 @@ function UserDetailPage(){
                     <div className='userbio'>
                         <p>{userData.bio}</p>
                     </div>
+                
+
+                    { userId !== user_id &&
+                    <div style={{padding:"1% 5%" , display:"flex" , width:"100%" , justifyContent:"flex-end"}}>
+                        <CommunicationRequest 
+                            id_from={user_id}
+                            id_to={userId}
+                            text={user_id ? "Send Request" : "Login to Send Message"}
+                        ></CommunicationRequest>
+                    </div>}
 
                     
                     <div className='usertags'>
