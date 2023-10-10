@@ -1,70 +1,50 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Open Science Project Marketplace
 
-## Available Scripts
+## Challenge: Building a Marketplace for Open Science Projects
+Nasa Space APPS Challenge 2023
 
-In the project directory, you can run:
+### `Backend Reposiroy`
+Click here to See Backend Repository : Django [Backend Code](https://github.com/hasnatahmed331/nasa_backend) 
 
-### `npm start`
+### Objective
+The goal of this project is to create a platform that facilitates the connection between creators of open science projects and skilled contributors by improving upon traditional tag-based systems.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Problem Statement
+Traditional tag-based systems tend to deteriorate over time as they rely on strict equality and a finite number of predefined tags. Managing a vast number of tags in a large system can become unwieldy and challenging to keep up to date.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Our Solution: Semantic-Based Search
+Our approach employs semantic-based search using a vector database to store vector embeddings of project descriptions and user bios. This system enables project creators and collaborators to discover each other through four different methods:
 
-### `npm test`
+1. **Project Collaborators can search for projects by describing the project they want to work on.**
+2. **Project Collaborators can receive project recommendations based on their bios.**
+3. **Project creators can search for collaborators by describing the desired bios for their projects.**
+4. **Project creators can receive collaborator recommendations based on their project descriptions.**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Benefits of Our Solution
+1. **Semantic Search:** The system offers semantic search capabilities, going beyond simple tags.
+2. **Context Awareness:** It generates context-aware results, allowing for infinite contextual tags.
+3. **Advanced Matching:** The system considers expertise, similarity, and more, going beyond traditional tag-based systems.
 
-### `npm run build`
+### Example Illustrating the System's Superiority Over Traditional Tags
+Suppose we have several developers' bios in the database, including web developers with different specializations:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Developer A: Front-end expert with React experience.
+2. Developer B: Backend specialist with extensive experience in financial systems.
+3. Developer C: General web developer with a recent experience in creating learning management systems (LMS) for a school.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+If a project description mentions the need for an expert web developer for an e-learning platform, our system would prioritize Developer C due to their relevant LMS experience, despite other developers potentially having more general web development experience. Traditional tag systems would struggle to make such nuanced distinctions.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Additional Features in the System
+1. **Third-Party Login:** We offer Google Firebase authentication for user convenience and security.
+2. **Secure Communication:** Users can send communication requests with personal introductions, keeping details private until mutual acceptance. This includes email access for direct communication.
+3. **Proactive Recommendations:** The system provides proactive recommendations based on user bios and project descriptions, connecting users with relevant opportunities automatically.
 
-### `npm run eject`
+### Technical Documentation
+- **Frontend:** Developed using React.
+- **Backend:** Powered by Django.
+- **Vector Database:** Utilizes Quadrant for storing vector embeddings.
+- **Relational Database:** Utilizes SQLite for relational data storage.
+- **Text to Vector Conversion:** Incorporates BERT models for converting text into vectors.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Our system aims to revolutionize open science project collaboration by enhancing discoverability and matching, while also ensuring security and ease of use for all users.
