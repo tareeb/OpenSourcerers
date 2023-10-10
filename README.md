@@ -2,10 +2,14 @@
 # Open Science Project Marketplace
 
 ## Challenge: Building a Marketplace for Open Science Projects
-Nasa Space APPS Challenge 2023
+Nasa Space Apps Challenge 2023
 
 ### `Backend Reposiroy`
 Click here to See Backend Repository : Django [Backend Code](https://github.com/hasnatahmed331/nasa_backend) 
+
+### Project Name : 
+#### OpenSourcerers
+A place where Everyone can show  Magic of their Open Source and become OpenSourcer
 
 ### Objective
 The goal of this project is to create a platform that facilitates the connection between creators of open science projects and skilled contributors by improving upon traditional tag-based systems.
@@ -48,3 +52,9 @@ If a project description mentions the need for an expert web developer for an e-
 - **Text to Vector Conversion:** Incorporates BERT models for converting text into vectors.
 
 Our system aims to revolutionize open science project collaboration by enhancing discoverability and matching, while also ensuring security and ease of use for all users.
+
+#### Tagging System Integration
+Additionally, our system incorporates a tagging system. During the project's development, we initially explored the possibility of enhancing the traditional tag-based approach. This was done as a contingency plan while participating in a competition, as we were uncertain whether we could successfully implement the semantic search. However, as the project progressed, it became evident that the semantic search system was functioning exceptionally well, making the tagging system an auxiliary feature.
+
+### Screenshots : 
+
